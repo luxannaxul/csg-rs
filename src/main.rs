@@ -24,83 +24,18 @@ fn main() {
     let mut terminals: HashSet<char> = HashSet::new();
 
     // variables
-    {
-        println!("variables..");
-        loop {
-            let char = Term::read_char(&term).expect("could not read char from term");
-            if char == ' ' || char == '\n' {
-                break;
-            }
-            println!("{}", char);
-            variables.insert(char);
-        }
-        println!();
-    }
+    fun_name(&term, &mut variables);
 
     // terminals
-    {
-        println!("terminals..");
-        loop {
-            let char = Term::read_char(&term).expect("could not read char from term");
-            if char == ' ' || char == '\n' {
-                break;
-            }
-            println!("{}", char);
-            terminals.insert(char);
-        }
-        println!()
-    }
+    fun_name1(&term, &mut terminals);
 
     assert!(variables.is_disjoint(&terminals));
 
     // productions
-    {
-        println!("productions..");
-        loop {
-            let mut user_input: String = String::new();
-            io::stdin()
-                .read_line(&mut user_input)
-                .expect("error reading from stdin");
-            if user_input == '\n'.to_string() {
-                break;
-            }
-            productions.push(parse_production(user_input, &productions));
-        }
-    }
+    fun_name2(&mut productions);
 
     // assert only defined chars were used in the productions
-    for production in &productions {
-        for left_char in production.left.as_bytes() {
-            let mut char_is_defined = false;
-            for variable in &variables {
-                if *left_char == *variable as u8 {
-                    char_is_defined = true;
-                }
-            }
-            for terminal in &terminals {
-                if *left_char == *terminal as u8 {
-                    char_is_defined = true;
-                }
-            }
-            assert!(char_is_defined);
-        }
-        for right_side in &production.right {
-            for right_char in right_side.as_bytes() {
-                let mut char_is_defined = false;
-                for variable in &variables {
-                    if *right_char == *variable as u8 {
-                        char_is_defined = true;
-                    }
-                }
-                for terminal in &terminals {
-                    if *right_char == *terminal as u8 {
-                        char_is_defined = true;
-                    }
-                }
-                assert!(char_is_defined);
-            }
-        }
-    }
+    fun_name3(&productions, &variables, terminals);
 
     // start
     println!("start variable..");
@@ -140,6 +75,81 @@ fn main() {
         }
         println!("\n");
     }
+}
+
+fn fun_name3(productions: &Vec<Production>, variables: &HashSet<char>, terminals: HashSet<char>) {
+    for production in productions {
+        for left_char in production.left.as_bytes() {
+            let mut char_is_defined = false;
+            for variable in variables {
+                if *left_char == *variable as u8 {
+                    char_is_defined = true;
+                }
+            }
+            for terminal in &terminals {
+                if *left_char == *terminal as u8 {
+                    char_is_defined = true;
+                }
+            }
+            assert!(char_is_defined);
+        }
+        for right_side in &production.right {
+            for right_char in right_side.as_bytes() {
+                let mut char_is_defined = false;
+                for variable in variables {
+                    if *right_char == *variable as u8 {
+                        char_is_defined = true;
+                    }
+                }
+                for terminal in &terminals {
+                    if *right_char == *terminal as u8 {
+                        char_is_defined = true;
+                    }
+                }
+                assert!(char_is_defined);
+            }
+        }
+    }
+}
+
+fn fun_name2(productions: &mut Vec<Production>) {
+    println!("productions..");
+    loop {
+        let mut user_input: String = String::new();
+        io::stdin()
+            .read_line(&mut user_input)
+            .expect("error reading from stdin");
+        if user_input == '\n'.to_string() {
+            break;
+        }
+        productions.push(parse_production(user_input, &*productions));
+    }
+}
+
+fn fun_name1(term: &Term, terminals: &mut HashSet<char>) {
+    println!("terminals..");
+    loop {
+        let char = Term::read_char(term).expect("could not read char from term");
+        if char == ' ' || char == '\n' {
+            break;
+        }
+        println!("{}", char);
+        terminals.insert(char);
+    }
+    println!()
+}
+
+fn fun_name(term: &Term, variables: &mut HashSet<char>) {
+    println!("variables..");
+    loop {
+        let char = Term::read_char(term).expect("could not read char from term");
+        if char == ' ' || char == '\n' {
+            break;
+        }
+        println!("{}", char);
+        variables.insert(char);
+    }
+    println!();
 }
 
 fn word_is_finished(word: &String, variables: &HashSet<char>) -> bool {
