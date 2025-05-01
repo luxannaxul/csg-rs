@@ -1,15 +1,14 @@
-very rusty tool for generating context-sensitive-grammar. example usage:
+very rusty tool for generating valid words based on a context-sensitive-grammar. example usage:
 
-anywhere in this directory run
->>>cargo run --quiet --release
+anywhere in this directory run "cargo run --quiet --release"
 
 then you can enter your variables by pressing the corresponding key
 
-variables..
-S
-A
-B
-X 
+variables..\n
+S\n
+A\n
+B\n
+X\n 
 
 press space or enter to get to terminals
 
