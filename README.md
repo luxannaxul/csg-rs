@@ -9,7 +9,7 @@ variables..
 S
 A
 B
-X
+X 
 
 press space or enter to get to terminals
 
