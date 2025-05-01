@@ -56,6 +56,7 @@ fn main() {
             Action::Exit => break,
             Action::GenerateWordsTillDepthN(n) => {
                 let mut starts: HashSet<String> = HashSet::new();
+                let mut language: HashSet<String> = HashSet::new();
                 starts.insert(start.to_string());
                 for _ in 0..n {
                     starts = apply_productions_once(&starts, &productions);
@@ -63,7 +64,7 @@ fn main() {
                         .into_iter()
                         .filter(|word| {
                             if word_is_finished(word, &variables) {
-                                print!("\"{word}\" ");
+                                language.insert(word.to_string());
                                 false
                             } else {
                                 true
@@ -71,6 +72,10 @@ fn main() {
                         })
                         .collect();
                 }
+                for word in language {
+                    print!("\"{word}\" ");
+                }
+                println!();
             }
         }
         println!("\n");
