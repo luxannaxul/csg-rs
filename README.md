@@ -4,11 +4,11 @@ anywhere in this directory run "cargo run --quiet --release"
 
 then you can enter your variables by pressing the corresponding key
 
-variables..\n
-S\n
-A\n
-B\n
-X\n 
+variables..
+S
+A
+B
+X 
 
 press space or enter to get to terminals
 
