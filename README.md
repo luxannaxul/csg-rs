@@ -52,7 +52,7 @@ and if prompted for arguments, provide them
 n..
 16
 
-here are all possible words for example, the above defined grammar can prodjuce with at most 16 consecutive rules applied
+here are all possible words for example, the above defined grammar can produce with at most 16 consecutive rules applied
 
 "" "bb" "aa" "abab" "aaaa" "bbbb" "baba" "babbab" "abaaba" "bbabba" "aaaaaa" "bbbbbb" "baabaa" "aabaab" "abbabb" "abbbabbb" "bbbbbbbb" "baabbaab" "abababab" "aaabaaab" "abaaabaa" "aabbaabb" "aaaaaaaa" "aabaaaba" "bbbabbba" "babbbabb" "abbaabba" "babababa" "bbaabbaa" "bbabbbab" "baaabaaa"
 
