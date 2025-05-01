@@ -56,7 +56,4 @@ here are all possible words for example, the above defined grammar can prodjuce 
 
 "" "bb" "aa" "abab" "aaaa" "bbbb" "baba" "babbab" "abaaba" "bbabba" "aaaaaa" "bbbbbb" "baabaa" "aabaab" "abbabb" "abbbabbb" "bbbbbbbb" "baabbaab" "abababab" "aaabaaab" "abaaabaa" "aabbaabb" "aaaaaaaa" "aabaaaba" "bbbabbba" "babbbabb" "abbaabba" "babababa" "bbaabbaa" "bbabbbab" "baaabaaa"
 
-
-options are:
-(0) exit
-(1) generate words of max production depth n
+then you return to the menu..
