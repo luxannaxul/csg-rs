@@ -1,8 +1,8 @@
-linux only, free to use software for non-profit usage.
+linux supported only, free to use and modify software for non-profit usage exclusively.
 
-# this is a tool for generating words based on a *context sensitive grammar*.
+### this is a tool for generating words based on a *context sensitive grammar*.
 
-how to use:
+## how to use:
 
 1. install *rust* on your system: "https://www.rust-lang.org/tools/install"
 
