@@ -31,13 +31,21 @@ example:
 
 productions..
 S -> aAS | bBS|X
+
 Aa-> aA
+
 Ab->bA
+
 Ba->aB
+
 Ba->bB
+
 AX->Xa
+
 BX->Xb
+
 X->
+
 <enter>
 <enter>
 
