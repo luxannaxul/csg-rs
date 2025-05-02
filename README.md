@@ -1,58 +1,46 @@
-very rusty tool for generating valid words based on a context-sensitive-grammar. example usage:
+# linux only, free to use software for non-profit usage.
 
-anywhere in this directory run "cargo run --quiet --release"
+this is a tool for generating words based on a *context sensitive grammar*.
 
-then you can enter your variables by pressing the corresponding key
+how to use:
 
-variables..
-S
-A
-B
-X 
+1. install *rust* on your system: https://www.rust-lang.org/tools/install
 
-press space or enter to get to terminals
+2. install *git* on your system: https://git-scm.com/downloads
 
-terminals..
-a
-b
+3. run in your destination directory>>>git clone https://github.com/luxannaxul/csg-rs.git
 
-its the same thing
+4. run >>>cd csg-rs
 
+5. compile and run the program by running >>>cargo run --release
 
-prodcutions should be entered in the following format (spaces get ignored completly)
-use an empty field on the right side to encode the empty word.
-seperate fields on the right with pipe '|'
-only use the same pattern on the left side ONCE
-enter twice to continue
+once you see "variables.." just type in your single sign variables. <space> or <enter> to continue
 
+the exact same thing now with your terminals..
+
+how to enter productions:
+
+specify the origin on left, seperate left from right with '->'
+list all possible conversions seperated by '|' (pipe) on the right.
+to enter <epsilon> (the empty word) just let one field on the right empty.
+press <enter> twice to continue.
+
+note: every left side has to be unique, every repetition on the right as well as every <space> gets ignored.
+
+example:
 
 productions..
-S-> aAS |bBS|   X
- Aa ->aA
-Bb -> bB
-Ba -> aB
-Ab -> bA
-AX -> Xa
-BX -> Xb
-X ->
+S -> aAS | bBS|X
+Aa-> aA
+Ab->bA
+Ba->aB
+Ba->bB
+AX->Xa
+BX->Xb
+X->
+<enter>
+<enter>
 
-enter your start point
+then you just need to set your start variable and can natrually interact with the menu
 
-start variable..
-S
 
-options are:
-(0) exit
-(1) generate words of max production depth n
-
-pick an option
-and if prompted for arguments, provide them
-
-n..
-16
-
-here are all possible words for example, the above defined grammar can produce with at most 16 consecutive rules applied
-
-"" "bb" "aa" "abab" "aaaa" "bbbb" "baba" "babbab" "abaaba" "bbabba" "aaaaaa" "bbbbbb" "baabaa" "aabaab" "abbabb" "abbbabbb" "bbbbbbbb" "baabbaab" "abababab" "aaabaaab" "abaaabaa" "aabbaabb" "aaaaaaaa" "aabaaaba" "bbbabbba" "babbbabb" "abbaabba" "babababa" "bbaabbaa" "bbabbbab" "baaabaaa"
-
-then you return to the menu..
