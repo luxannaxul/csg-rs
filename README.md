@@ -29,26 +29,4 @@ note: every left side has to be unique, every repetition on the right as well as
 
 example:
 
-productions..
-S -> aAS | bBS|X
-
-Aa-> aA
-
-Ab->bA
-
-Ba->aB
-
-Ba->bB
-
-AX->Xa
-
-BX->Xb
-
-X->
-
-<enter>
-<enter>
-
-then you just need to set your start variable and can natrually interact with the menu
-
-
+!(example.png)
