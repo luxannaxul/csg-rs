@@ -14,7 +14,7 @@ linux supported only, free to use and modify software for non-profit usage exclu
 
 5. compile and run the program by running "cargo run --release"
 
-once you see "variables.." just type in your single sign variables. <space> or <enter> to continue
+once you see "variables.." just type in your single-sign variables. press space or enter to continue
 
 the exact same thing now with your terminals..
 
@@ -22,8 +22,8 @@ how to enter productions:
 
 specify the origin on left, seperate left from right with '->'
 list all possible conversions seperated by '|' (pipe) on the right.
-to enter <epsilon> (the empty word) just let one field on the right empty.
-press <enter> twice to continue.
+to enter epsilon (the empty word) just let one field on the right empty.
+press enter twice to continue.
 
 note: every left side has to be unique, every repetition on the right as well as every <space> gets ignored.
 
