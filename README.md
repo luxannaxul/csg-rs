@@ -20,7 +20,7 @@ the exact same thing now with your terminals..
 
 how to enter productions:
 
-specify the origin on the left side, separate the left from the right side with '->'
+specify the origin on the left side, separate the left from the right side with '->',
 list all possible conversions separated by '|' (pipe) on the right.
 to enter epsilon (the empty word), just let one field on the right be empty.
 press enter twice to continue.
