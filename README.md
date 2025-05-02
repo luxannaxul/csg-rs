@@ -1,18 +1,18 @@
-# linux only, free to use software for non-profit usage.
+linux only, free to use software for non-profit usage.
 
-this is a tool for generating words based on a *context sensitive grammar*.
+# this is a tool for generating words based on a *context sensitive grammar*.
 
 how to use:
 
-1. install *rust* on your system: https://www.rust-lang.org/tools/install
+1. install *rust* on your system: "https://www.rust-lang.org/tools/install"
 
-2. install *git* on your system: https://git-scm.com/downloads
+2. install *git* on your system: "https://git-scm.com/downloads"
 
-3. run in your destination directory>>>git clone https://github.com/luxannaxul/csg-rs.git
+3. run in your destination directory "git clone https://github.com/luxannaxul/csg-rs.git"
 
-4. run >>>cd csg-rs
+4. run "cd csg-rs"
 
-5. compile and run the program by running >>>cargo run --release
+5. compile and run the program by running "cargo run --release"
 
 once you see "variables.." just type in your single sign variables. <space> or <enter> to continue
 
