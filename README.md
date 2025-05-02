@@ -20,12 +20,12 @@ the exact same thing now with your terminals..
 
 how to enter productions:
 
-specify the origin on left, seperate left from right with '->'
-list all possible conversions seperated by '|' (pipe) on the right.
-to enter epsilon (the empty word) just let one field on the right empty.
+specify the origin on the left side, separate the left from the right side with '->'
+list all possible conversions separated by '|' (pipe) on the right.
+to enter epsilon (the empty word), just let one field on the right be empty.
 press enter twice to continue.
 
-note: every left side has to be unique, every repetition on the right as well as every <space> gets ignored.
+note: every left side has to be unique, every repetition on the right as well as every space gets ignored.
 
 example:
 ![](https://github.com/luxannaxul/csg-rs/blob/main/example.png)
