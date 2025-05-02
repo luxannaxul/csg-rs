@@ -28,5 +28,4 @@ press <enter> twice to continue.
 note: every left side has to be unique, every repetition on the right as well as every <space> gets ignored.
 
 example:
-
 ![](https://github.com/luxannaxul/csg-rs/blob/main/example.png)
