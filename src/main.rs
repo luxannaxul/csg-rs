@@ -24,18 +24,18 @@ fn main() {
     let mut terminals: HashSet<char> = HashSet::new();
 
     // variables
-    fun_name(&term, &mut variables);
+    ask_variables(&term, &mut variables);
 
     // terminals
-    fun_name1(&term, &mut terminals);
+    ask_terminals(&term, &mut terminals);
 
     assert!(variables.is_disjoint(&terminals));
 
     // productions
-    fun_name2(&mut productions);
+    ask_productions(&mut productions);
 
     // assert only defined chars were used in the productions
-    fun_name3(&productions, &variables, terminals);
+    verify_input(&productions, &variables, terminals);
 
     // start
     println!("start variable..");
@@ -82,7 +82,11 @@ fn main() {
     }
 }
 
-fn fun_name3(productions: &Vec<Production>, variables: &HashSet<char>, terminals: HashSet<char>) {
+fn verify_input(
+    productions: &Vec<Production>,
+    variables: &HashSet<char>,
+    terminals: HashSet<char>,
+) {
     for production in productions {
         for left_char in production.left.as_bytes() {
             let mut char_is_defined = false;
@@ -117,7 +121,7 @@ fn fun_name3(productions: &Vec<Production>, variables: &HashSet<char>, terminals
     }
 }
 
-fn fun_name2(productions: &mut Vec<Production>) {
+fn ask_productions(productions: &mut Vec<Production>) {
     println!("productions..");
     loop {
         let mut user_input: String = String::new();
@@ -131,7 +135,7 @@ fn fun_name2(productions: &mut Vec<Production>) {
     }
 }
 
-fn fun_name1(term: &Term, terminals: &mut HashSet<char>) {
+fn ask_terminals(term: &Term, terminals: &mut HashSet<char>) {
     println!("terminals..");
     loop {
         let char = Term::read_char(term).expect("could not read char from term");
@@ -144,7 +148,7 @@ fn fun_name1(term: &Term, terminals: &mut HashSet<char>) {
     println!()
 }
 
-fn fun_name(term: &Term, variables: &mut HashSet<char>) {
+fn ask_variables(term: &Term, variables: &mut HashSet<char>) {
     println!("variables..");
     loop {
         let char = Term::read_char(term).expect("could not read char from term");
